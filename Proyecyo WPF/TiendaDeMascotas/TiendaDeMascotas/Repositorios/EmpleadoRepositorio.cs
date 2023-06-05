@@ -53,5 +53,24 @@ namespace TiendaDeMascotas
             return exito;
         }
 
+        public static bool Actualizar(int empNum, string nuevoNombre, string nuevaDireccion, string nuevoTelefono, string nuevaContraseña)
+        {
+            bool exito = false;
+            using (SqlConnection conn = ObtenerConexion())
+            {
+                string updateQuery = "UPDATE Empleados SET EmpNombre = @Nombre, EmpDireccion = @Direccion, EmpTelefono = @Telefono, EmpContraseña = @Contraseña WHERE EmpNum = @EmpNum";
+                SqlCommand comando = new SqlCommand(updateQuery, conn);
+                comando.Parameters.AddWithValue("@Nombre", nuevoNombre);
+                comando.Parameters.AddWithValue("@Direccion", nuevaDireccion);
+                comando.Parameters.AddWithValue("@Telefono", nuevoTelefono);
+                comando.Parameters.AddWithValue("@Contraseña", nuevaContraseña);
+                comando.Parameters.AddWithValue("@EmpNum", empNum);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+                exito = (filasAfectadas > 0);
+            }
+
+            return exito;
+        }
     }
 }

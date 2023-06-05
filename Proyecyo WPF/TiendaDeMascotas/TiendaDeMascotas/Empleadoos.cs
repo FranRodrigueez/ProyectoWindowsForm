@@ -20,6 +20,26 @@ namespace TiendaDeMascotas
 
             // Configurar la columna para mostrar el número de empleado
             EmpleadoDGV.Columns["EmpNum"].Visible = true;
+
+            // Asignar el evento SelectionChanged al GunaDataGridView
+            EmpleadoDGV.SelectionChanged += EmpleadoDGV_SelectionChanged;
+        }
+        private void EmpleadoDGV_SelectionChanged(object sender, EventArgs e)
+        {
+            if (EmpleadoDGV.SelectedRows.Count > 0)
+            {
+                // Obtener los datos del empleado seleccionado
+                string nombre = EmpleadoDGV.SelectedRows[0].Cells["EmpNombre"].Value.ToString();
+                string direccion = EmpleadoDGV.SelectedRows[0].Cells["EmpDireccion"].Value.ToString();
+                string telefono = EmpleadoDGV.SelectedRows[0].Cells["EmpTelefono"].Value.ToString();
+                string contraseña = EmpleadoDGV.SelectedRows[0].Cells["EmpContraseña"].Value.ToString();
+
+                // Mostrar los datos en los cuadros de texto
+                EmpleadoNombre.Text = nombre;
+                EmpleadoDireccion.Text = direccion;
+                EmpleadoTelefono.Text = telefono;
+                EmpleadoContraseña.Text = contraseña;
+            }
         }
 
         private void bunifuThinButton23_Click(object sender, EventArgs e)
@@ -134,19 +154,34 @@ namespace TiendaDeMascotas
         {
             if (EmpleadoDGV.SelectedRows.Count > 0)
             {
-                
+                // Obtener el número de empleado de la fila seleccionada
+                int empNum = Convert.ToInt32(EmpleadoDGV.SelectedRows[0].Cells["EmpNum"].Value);
 
-                // Obtener los datos del empleado seleccionado
-                string nombre = EmpleadoDGV.SelectedRows[0].Cells["EmpNombre"].Value.ToString();
-                string direccion = EmpleadoDGV.SelectedRows[0].Cells["EmpDireccion"].Value.ToString();
-                string telefono = EmpleadoDGV.SelectedRows[0].Cells["EmpTelefono"].Value.ToString();
-                string contraseña = EmpleadoDGV.SelectedRows[0].Cells["EmpContraseña"].Value.ToString();
+                // Obtener los datos modificados de las cajas de texto
+                string nuevoNombre = EmpleadoNombre.Text;
+                string nuevaDireccion = EmpleadoDireccion.Text;
+                string nuevoTelefono = EmpleadoTelefono.Text;
+                string nuevaContraseña = EmpleadoContraseña.Text;
 
-                // Mostrar los datos en los cuadros de texto
-                EmpleadoNombre.Text = nombre;
-                EmpleadoDireccion.Text = direccion;
-                EmpleadoTelefono.Text = telefono;
-                EmpleadoContraseña.Text = contraseña;
+                // Actualizar los datos en el GunaDataGridView
+                EmpleadoDGV.SelectedRows[0].Cells["EmpNombre"].Value = nuevoNombre;
+                EmpleadoDGV.SelectedRows[0].Cells["EmpDireccion"].Value = nuevaDireccion;
+                EmpleadoDGV.SelectedRows[0].Cells["EmpTelefono"].Value = nuevoTelefono;
+                EmpleadoDGV.SelectedRows[0].Cells["EmpContraseña"].Value = nuevaContraseña;
+
+                // Actualizar los datos en la base de datos
+                if (EmpleadoRepository.Actualizar(empNum, nuevoNombre, nuevaDireccion, nuevoTelefono, nuevaContraseña))
+                {
+                    MessageBox.Show("Datos actualizados correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar los datos en la base de datos.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para editar.");
             }
         }
 
