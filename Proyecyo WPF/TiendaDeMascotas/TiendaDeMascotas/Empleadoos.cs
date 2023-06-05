@@ -23,13 +23,12 @@ namespace TiendaDeMascotas
 
         }
 
-        static string conexionString = "server = localhost; database = TiendaDeAnimales; integrated security = true";
-        SqlConnection conexion = new SqlConnection(conexionString);
+
 
 
         private void GuardarEmpleado_Click(object sender, EventArgs e)
         {
-            if(EmpleadoNombre.Text == "" || EmpleadoTelefono.Text == "" || EmpleadoContraseña.Text == "" || EmpleadoCumpleaños.Text == "" || EmpleadoDireccion.Text == "")
+            if (EmpleadoNombre.Text == "" || EmpleadoTelefono.Text == "" || EmpleadoContraseña.Text == "" || EmpleadoDireccion.Text == "")
             {
                 MessageBox.Show("Error. Introduzca la información completa");
             }
@@ -37,23 +36,30 @@ namespace TiendaDeMascotas
             {
                 try
                 {
-                    conexion.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Empleados (EmpNombre, EmpDireccion, EmpCumpleaños, EmpTelefono, EmpContraseña) VALUES (@EN, @ED, @ECu, @ET, @EPC)", conexion);
-                    
-                    cmd.Parameters.AddWithValue("@EN", EmpleadoNombre.Text);
-                    cmd.Parameters.AddWithValue("@ED", EmpleadoDireccion.Text);
-                    cmd.Parameters.AddWithValue("@ECu", EmpleadoCumpleaños.Text);
-                    cmd.Parameters.AddWithValue("@ET", EmpleadoTelefono.Text);
-                    cmd.Parameters.AddWithValue("@EPC",EmpleadoContraseña.Text);
-                    cmd.ExecuteNonQuery();
+                    ClassEmpleado empleado = new ClassEmpleado();
+                    empleado.nombre = EmpleadoNombre.Text;
+                    empleado.direccion = EmpleadoDireccion.Text;
+                    empleado.telefono = EmpleadoTelefono.Text;
+                    empleado.contraseña = EmpleadoContraseña.Text;
+                    //empleado.cumpleaños = EmpleadoCumpleaños.Value.Date;
 
-                    MessageBox.Show("Empleado añadido");
 
-                    conexion.Close();
-                    
+                    if (EmpleadoRepository.Agregar(empleado) == 1) { MessageBox.Show("Usuario añadido"); } else { MessageBox.Show("error"); }
+                    //        MessageBox.Show("hola2");
+                    //        SqlCommand comando = new SqlCommand(string.Format("INSERT INTO Empleados VALUES ('{0}','{1}','{2}','{3}','{4}')",
+                    //            empleado.nombre, empleado.direccion, empleado.telefono, empleado.contraseña, empleado.cumpleaños), conexion); */
+
+                    //        SqlCommand comando = new SqlCommand(string.Format("Select EmplNombre from Empleados"));
+
+                    //        SqlDataReader retorno = comando.ExecuteReader();
+
+                    //        MessageBox.Show("Empleado añadido");
+
+                    //        conexion.Close();
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }

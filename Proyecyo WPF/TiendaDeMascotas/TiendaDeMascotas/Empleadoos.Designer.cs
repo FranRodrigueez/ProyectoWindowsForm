@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleadoos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,8 +52,6 @@
             this.BorrarEmpleado = new Bunifu.Framework.UI.BunifuThinButton2();
             this.EditarEmpleado = new Bunifu.Framework.UI.BunifuThinButton2();
             this.GuardarEmpleado = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.label15 = new System.Windows.Forms.Label();
-            this.EmpleadoCumpleaños = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.EmpleadoContraseña = new System.Windows.Forms.TextBox();
             this.EmpleadoTelefono = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -215,30 +213,30 @@
             // 
             // EmpleadoDGV
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.EmpleadoDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.EmpleadoDGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EmpleadoDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmpleadoDGV.BackgroundColor = System.Drawing.Color.White;
             this.EmpleadoDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpleadoDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EmpleadoDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmpleadoDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmpleadoDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EmpleadoDGV.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmpleadoDGV.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmpleadoDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmpleadoDGV.EnableHeadersVisualStyles = false;
             this.EmpleadoDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.EmpleadoDGV.Location = new System.Drawing.Point(71, 399);
@@ -288,8 +286,6 @@
             this.panel2.Controls.Add(this.BorrarEmpleado);
             this.panel2.Controls.Add(this.EditarEmpleado);
             this.panel2.Controls.Add(this.GuardarEmpleado);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.EmpleadoCumpleaños);
             this.panel2.Controls.Add(this.EmpleadoContraseña);
             this.panel2.Controls.Add(this.EmpleadoTelefono);
             this.panel2.Controls.Add(this.label14);
@@ -382,46 +378,6 @@
             this.GuardarEmpleado.TabIndex = 16;
             this.GuardarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.GuardarEmpleado.Click += new System.EventHandler(this.GuardarEmpleado_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label15.Location = new System.Drawing.Point(421, 129);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(111, 22);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Cumpleaños";
-            // 
-            // EmpleadoCumpleaños
-            // 
-            this.EmpleadoCumpleaños.BackColor = System.Drawing.Color.Crimson;
-            this.EmpleadoCumpleaños.BorderRadius = 17;
-            this.EmpleadoCumpleaños.CalendarForeColor = System.Drawing.Color.White;
-            this.EmpleadoCumpleaños.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.EmpleadoCumpleaños.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.EmpleadoCumpleaños.Color = System.Drawing.Color.Silver;
-            this.EmpleadoCumpleaños.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.EmpleadoCumpleaños.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Right;
-            this.EmpleadoCumpleaños.DisabledColor = System.Drawing.Color.Gray;
-            this.EmpleadoCumpleaños.DisplayWeekNumbers = false;
-            this.EmpleadoCumpleaños.DPHeight = 0;
-            this.EmpleadoCumpleaños.FillDatePicker = false;
-            this.EmpleadoCumpleaños.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmpleadoCumpleaños.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.EmpleadoCumpleaños.Icon = ((System.Drawing.Image)(resources.GetObject("EmpleadoCumpleaños.Icon")));
-            this.EmpleadoCumpleaños.IconColor = System.Drawing.Color.White;
-            this.EmpleadoCumpleaños.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Left;
-            this.EmpleadoCumpleaños.LeftTextMargin = 5;
-            this.EmpleadoCumpleaños.Location = new System.Drawing.Point(564, 129);
-            this.EmpleadoCumpleaños.MinimumSize = new System.Drawing.Size(4, 32);
-            this.EmpleadoCumpleaños.Name = "EmpleadoCumpleaños";
-            this.EmpleadoCumpleaños.Size = new System.Drawing.Size(223, 32);
-            this.EmpleadoCumpleaños.TabIndex = 14;
-            this.EmpleadoCumpleaños.Value = new System.DateTime(2023, 6, 4, 16, 55, 0, 0);
-            this.EmpleadoCumpleaños.ValueChanged += new System.EventHandler(this.EmpleadoCumpleaños_ValueChanged);
             // 
             // EmpleadoContraseña
             // 
@@ -595,8 +551,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 BorrarEmpleado;
         private Bunifu.Framework.UI.BunifuThinButton2 EditarEmpleado;
         private Bunifu.Framework.UI.BunifuThinButton2 GuardarEmpleado;
-        private System.Windows.Forms.Label label15;
-        private Bunifu.UI.WinForms.BunifuDatePicker EmpleadoCumpleaños;
         private System.Windows.Forms.TextBox EmpleadoContraseña;
         private System.Windows.Forms.TextBox EmpleadoTelefono;
         private System.Windows.Forms.Label label14;

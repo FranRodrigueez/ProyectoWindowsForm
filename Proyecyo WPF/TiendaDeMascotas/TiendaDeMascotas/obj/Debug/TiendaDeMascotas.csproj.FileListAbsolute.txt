@@ -41,3 +41,24 @@ C:\Users\fran9\Desktop\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\
 C:\Users\fran9\Desktop\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
 C:\Users\fran9\Desktop\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\Guna.UI.dll
 C:\Users\fran9\Desktop\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.csproj.CopyComplete
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\TiendaDeMascotas.exe.config
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\TiendaDeMascotas.exe
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\TiendaDeMascotas.pdb
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\bin\Debug\Guna.UI.dll
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.csproj.AssemblyReference.cache
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.csproj.SuggestedBindingRedirects.cache
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.Clientes.resources
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.Empleadoos.resources
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.Home.resources
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.Login.resources
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.Productos.resources
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.Properties.Resources.resources
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.csproj.GenerateResource.cache
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.exe.licenses
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.csproj.CoreCompileInputs.cache
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.csproj.CopyComplete
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.exe
+C:\Users\pabru\OneDrive\Escritorio\1º DAM\Proyecto\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.pdb
