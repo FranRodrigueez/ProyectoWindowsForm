@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace TiendaDeMascotas.Clases
 {
-    internal class ClassProducto
+    public class ClassProducto
     {
+        public string idProducto;
+        public string nombreProducto;
+        public string categoriaProducto;
+        public string cantidadProducto;
+        public string precioProducto;
+
+        public ClassProducto()
+        {
+
+        }
     }
+
+
 }

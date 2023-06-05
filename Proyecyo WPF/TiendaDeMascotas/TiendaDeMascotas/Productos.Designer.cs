@@ -49,20 +49,20 @@
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.CategoriaNombre = new System.Windows.Forms.ComboBox();
             this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PrecioNombre = new System.Windows.Forms.TextBox();
+            this.CantidadNombre = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Nom = new System.Windows.Forms.TextBox();
+            this.ProductoNombre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -284,16 +284,16 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.CategoriaNombre);
             this.panel2.Controls.Add(this.bunifuThinButton23);
             this.panel2.Controls.Add(this.bunifuThinButton22);
             this.panel2.Controls.Add(this.bunifuThinButton21);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.PrecioNombre);
+            this.panel2.Controls.Add(this.CantidadNombre);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.Nom);
+            this.panel2.Controls.Add(this.ProductoNombre);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
@@ -301,6 +301,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(832, 255);
             this.panel2.TabIndex = 0;
+            // 
+            // CategoriaNombre
+            // 
+            this.CategoriaNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.CategoriaNombre.FormattingEnabled = true;
+            this.CategoriaNombre.Location = new System.Drawing.Point(214, 84);
+            this.CategoriaNombre.Name = "CategoriaNombre";
+            this.CategoriaNombre.Size = new System.Drawing.Size(205, 28);
+            this.CategoriaNombre.TabIndex = 19;
             // 
             // bunifuThinButton23
             // 
@@ -377,21 +386,21 @@
             this.bunifuThinButton21.TabIndex = 16;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // PrecioNombre
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(625, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(194, 26);
-            this.textBox4.TabIndex = 13;
+            this.PrecioNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioNombre.Location = new System.Drawing.Point(625, 86);
+            this.PrecioNombre.Name = "PrecioNombre";
+            this.PrecioNombre.Size = new System.Drawing.Size(194, 26);
+            this.PrecioNombre.TabIndex = 13;
             // 
-            // textBox3
+            // CantidadNombre
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(425, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 26);
-            this.textBox3.TabIndex = 12;
+            this.CantidadNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CantidadNombre.Location = new System.Drawing.Point(425, 86);
+            this.CantidadNombre.Name = "CantidadNombre";
+            this.CantidadNombre.Size = new System.Drawing.Size(194, 26);
+            this.CantidadNombre.TabIndex = 12;
             // 
             // label14
             // 
@@ -429,14 +438,14 @@
             this.label10.TabIndex = 8;
             this.label10.Text = "Categoría";
             // 
-            // Nom
+            // ProductoNombre
             // 
-            this.Nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nom.Location = new System.Drawing.Point(14, 86);
-            this.Nom.Name = "Nom";
-            this.Nom.Size = new System.Drawing.Size(194, 26);
-            this.Nom.TabIndex = 7;
-            this.Nom.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.ProductoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductoNombre.Location = new System.Drawing.Point(14, 86);
+            this.ProductoNombre.Name = "ProductoNombre";
+            this.ProductoNombre.Size = new System.Drawing.Size(194, 26);
+            this.ProductoNombre.TabIndex = 7;
+            this.ProductoNombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label9
             // 
@@ -479,15 +488,6 @@
             // 
             this.bunifuElipse1.ElipseRadius = 35;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(214, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 28);
-            this.comboBox1.TabIndex = 19;
             // 
             // Productos
             // 
@@ -550,16 +550,16 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox PrecioNombre;
+        private System.Windows.Forms.TextBox CantidadNombre;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox Nom;
+        private System.Windows.Forms.TextBox ProductoNombre;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CategoriaNombre;
     }
 }
