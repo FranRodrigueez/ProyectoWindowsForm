@@ -15,16 +15,14 @@ namespace TiendaDeMascotas
     {
         public Empleadoos()
         {
-            InitializeComponent();
+            InitializeComponent();          
+            MostrarEmpleados();
         }
 
         private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
 
         }
-
-
-
 
         private void GuardarEmpleado_Click(object sender, EventArgs e)
         {
@@ -42,21 +40,10 @@ namespace TiendaDeMascotas
                     empleado.direccion = EmpleadoDireccion.Text;
                     empleado.telefono = EmpleadoTelefono.Text;
                     empleado.contraseña = EmpleadoContraseña.Text;
-                    //empleado.cumpleaños = EmpleadoCumpleaños.Value.Date;
+                   
 
 
-                    if (EmpleadoRepository.Agregar(empleado) == 1) { MessageBox.Show("Usuario añadido"); } else { MessageBox.Show("error"); }
-                    //        MessageBox.Show("hola2");
-                    //        SqlCommand comando = new SqlCommand(string.Format("INSERT INTO Empleados VALUES ('{0}','{1}','{2}','{3}','{4}')",
-                    //            empleado.nombre, empleado.direccion, empleado.telefono, empleado.contraseña, empleado.cumpleaños), conexion); */
-
-                    //        SqlCommand comando = new SqlCommand(string.Format("Select EmplNombre from Empleados"));
-
-                    //        SqlDataReader retorno = comando.ExecuteReader();
-
-                    //        MessageBox.Show("Empleado añadido");
-
-                    //        conexion.Close();
+                    if (EmpleadoRepository.Agregar(empleado) == 1) { MessageBox.Show("Usuario añadido"); } else { MessageBox.Show("error"); }                   
 
                 }
                 catch (Exception ex)
@@ -64,8 +51,36 @@ namespace TiendaDeMascotas
                     MessageBox.Show(ex.Message);
                 }
             }
+
+            MostrarEmpleados();
         }
 
+        private void MostrarEmpleados()
+        {
+            try
+            {
+                // Obtener la conexión a la base de datos
+                using (SqlConnection conn = EmpleadoRepository.ObtenerConexion())
+                {
+                    // Consultar los empleados en la base de datos
+                    string selectQuery = "SELECT EmpNombre, EmpDireccion, EmpTelefono, EmpContraseña FROM Empleados";
+                    SqlCommand comando = new SqlCommand(selectQuery, conn);
+                    SqlDataReader reader = comando.ExecuteReader();
+
+                    // Crear una tabla temporal para almacenar los datos de los empleados
+                    DataTable empleadosTable = new DataTable();
+                    empleadosTable.Load(reader);
+
+                    // Asignar la tabla temporal como origen de datos del GunaDataGridView
+                    EmpleadoDGV.DataSource = empleadosTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar los empleados: " + ex.Message);
+            }
+        }
+    
         private void EmpleadoNombre_TextChanged(object sender, EventArgs e)
         {
 
