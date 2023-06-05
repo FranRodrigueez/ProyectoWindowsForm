@@ -390,6 +390,7 @@
             this.bunifuThinButton21.Size = new System.Drawing.Size(169, 39);
             this.bunifuThinButton21.TabIndex = 16;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
             // ProductoPrecio
             // 
