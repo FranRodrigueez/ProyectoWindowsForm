@@ -17,11 +17,35 @@ namespace TiendaDeMascotas
         {
             InitializeComponent();          
             MostrarEmpleados();
+
+            // Configurar la columna para mostrar el número de empleado
+            EmpleadoDGV.Columns["EmpNum"].Visible = true;
         }
 
         private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
+            if (EmpleadoDGV.SelectedRows.Count > 0)
+            {
+                // Obtener el número de empleado de la fila seleccionada
+                int empNum = Convert.ToInt32(EmpleadoDGV.SelectedRows[0].Cells["EmpNum"].Value);
 
+                // Eliminar el empleado del GunaDataGridView
+                EmpleadoDGV.Rows.RemoveAt(EmpleadoDGV.SelectedRows[0].Index);
+
+                // Eliminar el empleado de la base de datos
+                if (EmpleadoRepository.Eliminar(empNum))
+                {
+                    MessageBox.Show("Empleado eliminado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el empleado de la base de datos.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para borrar.");
+            }
         }
 
         private void GuardarEmpleado_Click(object sender, EventArgs e)
@@ -63,7 +87,7 @@ namespace TiendaDeMascotas
                 using (SqlConnection conn = EmpleadoRepository.ObtenerConexion())
                 {
                     // Consultar los empleados en la base de datos
-                    string selectQuery = "SELECT EmpNombre, EmpDireccion, EmpTelefono, EmpContraseña FROM Empleados";
+                    string selectQuery = "SELECT EmpNum, EmpNombre, EmpDireccion, EmpTelefono, EmpContraseña FROM Empleados";
                     SqlCommand comando = new SqlCommand(selectQuery, conn);
                     SqlDataReader reader = comando.ExecuteReader();
 
@@ -107,6 +131,26 @@ namespace TiendaDeMascotas
         }
 
         private void EditarEmpleado_Click(object sender, EventArgs e)
+        {
+            if (EmpleadoDGV.SelectedRows.Count > 0)
+            {
+                
+
+                // Obtener los datos del empleado seleccionado
+                string nombre = EmpleadoDGV.SelectedRows[0].Cells["EmpNombre"].Value.ToString();
+                string direccion = EmpleadoDGV.SelectedRows[0].Cells["EmpDireccion"].Value.ToString();
+                string telefono = EmpleadoDGV.SelectedRows[0].Cells["EmpTelefono"].Value.ToString();
+                string contraseña = EmpleadoDGV.SelectedRows[0].Cells["EmpContraseña"].Value.ToString();
+
+                // Mostrar los datos en los cuadros de texto
+                EmpleadoNombre.Text = nombre;
+                EmpleadoDireccion.Text = direccion;
+                EmpleadoTelefono.Text = telefono;
+                EmpleadoContraseña.Text = contraseña;
+            }
+        }
+
+        private void EmpleadoDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -8,6 +8,7 @@ namespace TiendaDeMascotas
 {
     public class ClassEmpleado
     {
+        public int idEmpleado;
         public string nombre;
         public string direccion;
         public string telefono;

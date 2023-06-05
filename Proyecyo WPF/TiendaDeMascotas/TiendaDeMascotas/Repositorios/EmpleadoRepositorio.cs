@@ -37,6 +37,21 @@ namespace TiendaDeMascotas
             return retorno;
         }
 
-       
+        public static bool Eliminar(int empNum)
+        {
+            bool exito = false;
+            using (SqlConnection conn = ObtenerConexion())
+            {
+                string deleteQuery = "DELETE FROM Empleados WHERE EmpNum = @EmpNum";
+                SqlCommand comando = new SqlCommand(deleteQuery, conn);
+                comando.Parameters.AddWithValue("@EmpNum", empNum);
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+                exito = (filasAfectadas > 0);
+            }
+
+            return exito;
+        }
+
     }
 }
