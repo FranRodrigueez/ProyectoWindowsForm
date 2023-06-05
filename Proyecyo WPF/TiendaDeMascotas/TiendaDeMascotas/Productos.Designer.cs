@@ -52,19 +52,17 @@
             this.bunifuThinButton23 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.label15 = new System.Windows.Forms.Label();
-            this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Nom = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -241,11 +239,11 @@
             this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.gunaDataGridView1.EnableHeadersVisualStyles = false;
             this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView1.Location = new System.Drawing.Point(72, 399);
+            this.gunaDataGridView1.Location = new System.Drawing.Point(72, 367);
             this.gunaDataGridView1.Name = "gunaDataGridView1";
             this.gunaDataGridView1.RowHeadersVisible = false;
             this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(832, 278);
+            this.gunaDataGridView1.Size = new System.Drawing.Size(832, 310);
             this.gunaDataGridView1.TabIndex = 20;
             this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -275,7 +273,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label12.Location = new System.Drawing.Point(410, 353);
+            this.label12.Location = new System.Drawing.Point(355, 310);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(202, 30);
@@ -286,16 +284,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.bunifuThinButton23);
             this.panel2.Controls.Add(this.bunifuThinButton22);
             this.panel2.Controls.Add(this.bunifuThinButton21);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.bunifuDatePicker1);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.Nom);
             this.panel2.Controls.Add(this.label9);
@@ -303,7 +299,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(72, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(832, 284);
+            this.panel2.Size = new System.Drawing.Size(832, 255);
             this.panel2.TabIndex = 0;
             // 
             // bunifuThinButton23
@@ -324,7 +320,7 @@
             this.bunifuThinButton23.IdleFillColor = System.Drawing.Color.Crimson;
             this.bunifuThinButton23.IdleForecolor = System.Drawing.Color.Navy;
             this.bunifuThinButton23.IdleLineColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton23.Location = new System.Drawing.Point(625, 226);
+            this.bunifuThinButton23.Location = new System.Drawing.Point(513, 167);
             this.bunifuThinButton23.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.bunifuThinButton23.Name = "bunifuThinButton23";
             this.bunifuThinButton23.Size = new System.Drawing.Size(169, 39);
@@ -349,7 +345,7 @@
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Crimson;
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.Navy;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(425, 226);
+            this.bunifuThinButton22.Location = new System.Drawing.Point(302, 167);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
             this.bunifuThinButton22.Size = new System.Drawing.Size(169, 39);
@@ -374,51 +370,12 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Crimson;
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Navy;
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(214, 226);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(97, 167);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(169, 39);
             this.bunifuThinButton21.TabIndex = 16;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label15.Location = new System.Drawing.Point(421, 129);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(111, 22);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Cumpleaños";
-            // 
-            // bunifuDatePicker1
-            // 
-            this.bunifuDatePicker1.BackColor = System.Drawing.Color.Crimson;
-            this.bunifuDatePicker1.BorderRadius = 17;
-            this.bunifuDatePicker1.CalendarForeColor = System.Drawing.Color.White;
-            this.bunifuDatePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.bunifuDatePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.bunifuDatePicker1.Color = System.Drawing.Color.Silver;
-            this.bunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.bunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Right;
-            this.bunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDatePicker1.DisplayWeekNumbers = false;
-            this.bunifuDatePicker1.DPHeight = 0;
-            this.bunifuDatePicker1.FillDatePicker = false;
-            this.bunifuDatePicker1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDatePicker1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.bunifuDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePicker1.Icon")));
-            this.bunifuDatePicker1.IconColor = System.Drawing.Color.White;
-            this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Left;
-            this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(564, 129);
-            this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
-            this.bunifuDatePicker1.Name = "bunifuDatePicker1";
-            this.bunifuDatePicker1.Size = new System.Drawing.Size(223, 32);
-            this.bunifuDatePicker1.TabIndex = 14;
-            this.bunifuDatePicker1.Value = new System.DateTime(2023, 6, 4, 16, 55, 0, 0);
             // 
             // textBox4
             // 
@@ -444,9 +401,9 @@
             this.label14.Location = new System.Drawing.Point(621, 61);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(102, 22);
+            this.label14.Size = new System.Drawing.Size(61, 22);
             this.label14.TabIndex = 11;
-            this.label14.Text = "Contraseña";
+            this.label14.Text = "Precio";
             // 
             // label11
             // 
@@ -456,18 +413,9 @@
             this.label11.Location = new System.Drawing.Point(421, 61);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 22);
+            this.label11.Size = new System.Drawing.Size(83, 22);
             this.label11.TabIndex = 10;
-            this.label11.Text = "Teléfono";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(214, 86);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 102);
-            this.textBox2.TabIndex = 9;
+            this.label11.Text = "Cantidad";
             // 
             // label10
             // 
@@ -477,9 +425,9 @@
             this.label10.Location = new System.Drawing.Point(214, 61);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 22);
+            this.label10.Size = new System.Drawing.Size(86, 22);
             this.label10.TabIndex = 8;
-            this.label10.Text = "Dirección";
+            this.label10.Text = "Categoría";
             // 
             // Nom
             // 
@@ -531,6 +479,15 @@
             // 
             this.bunifuElipse1.ElipseRadius = 35;
             this.bunifuElipse1.TargetControl = this;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(214, 84);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(205, 28);
+            this.comboBox1.TabIndex = 19;
             // 
             // Productos
             // 
@@ -593,18 +550,16 @@
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton23;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private System.Windows.Forms.Label label15;
-        private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Nom;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
