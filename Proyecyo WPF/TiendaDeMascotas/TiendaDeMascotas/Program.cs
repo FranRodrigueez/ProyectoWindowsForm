@@ -16,7 +16,7 @@ namespace TiendaDeMascotas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Empleadoos());
+            Application.Run(new Productos());
         }
     }
 }

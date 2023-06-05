@@ -8,7 +8,7 @@ namespace TiendaDeMascotas.Clases
 {
     public class ClassProducto
     {
-        public string idProducto;
+        public int idProducto;
         public string nombreProducto;
         public string categoriaProducto;
         public string cantidadProducto;
@@ -19,6 +19,4 @@ namespace TiendaDeMascotas.Clases
 
         }
     }
-
-
 }
