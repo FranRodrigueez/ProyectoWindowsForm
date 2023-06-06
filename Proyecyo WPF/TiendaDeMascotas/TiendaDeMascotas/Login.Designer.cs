@@ -36,11 +36,11 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.ContraseñaLogin = new System.Windows.Forms.TextBox();
+            this.IniciarSesion = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UsuarioLogin = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -108,38 +108,39 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Contraseña";
             // 
-            // textBox2
+            // ContraseñaLogin
             // 
-            this.textBox2.Location = new System.Drawing.Point(60, 288);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 26);
-            this.textBox2.TabIndex = 4;
+            this.ContraseñaLogin.Location = new System.Drawing.Point(60, 288);
+            this.ContraseñaLogin.Name = "ContraseñaLogin";
+            this.ContraseñaLogin.Size = new System.Drawing.Size(194, 26);
+            this.ContraseñaLogin.TabIndex = 4;
+            this.ContraseñaLogin.TextChanged += new System.EventHandler(this.ContraseñaLogin_TextChanged_1);
             // 
-            // bunifuThinButton21
+            // IniciarSesion
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Iniciar Sesión";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.Navy;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(74, 334);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(169, 39);
-            this.bunifuThinButton21.TabIndex = 6;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            this.IniciarSesion.ActiveBorderThickness = 1;
+            this.IniciarSesion.ActiveCornerRadius = 20;
+            this.IniciarSesion.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.IniciarSesion.ActiveForecolor = System.Drawing.Color.White;
+            this.IniciarSesion.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.IniciarSesion.BackColor = System.Drawing.SystemColors.Control;
+            this.IniciarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IniciarSesion.BackgroundImage")));
+            this.IniciarSesion.ButtonText = "Iniciar Sesión";
+            this.IniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IniciarSesion.ForeColor = System.Drawing.Color.SeaGreen;
+            this.IniciarSesion.IdleBorderThickness = 1;
+            this.IniciarSesion.IdleCornerRadius = 20;
+            this.IniciarSesion.IdleFillColor = System.Drawing.Color.Crimson;
+            this.IniciarSesion.IdleForecolor = System.Drawing.Color.Navy;
+            this.IniciarSesion.IdleLineColor = System.Drawing.Color.Crimson;
+            this.IniciarSesion.Location = new System.Drawing.Point(74, 334);
+            this.IniciarSesion.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.IniciarSesion.Name = "IniciarSesion";
+            this.IniciarSesion.Size = new System.Drawing.Size(169, 39);
+            this.IniciarSesion.TabIndex = 6;
+            this.IniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IniciarSesion.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
             // label4
             // 
@@ -162,13 +163,13 @@
             this.panel2.Size = new System.Drawing.Size(315, 23);
             this.panel2.TabIndex = 8;
             // 
-            // textBox1
+            // UsuarioLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 189);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 26);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.UsuarioLogin.Location = new System.Drawing.Point(60, 189);
+            this.UsuarioLogin.Name = "UsuarioLogin";
+            this.UsuarioLogin.Size = new System.Drawing.Size(194, 26);
+            this.UsuarioLogin.TabIndex = 1;
+            this.UsuarioLogin.TextChanged += new System.EventHandler(this.UsuarioLogin_TextChanged);
             // 
             // Login
             // 
@@ -177,11 +178,11 @@
             this.ClientSize = new System.Drawing.Size(315, 468);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.bunifuThinButton21);
+            this.Controls.Add(this.IniciarSesion);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ContraseñaLogin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UsuarioLogin);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -204,11 +205,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 IniciarSesion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ContraseñaLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UsuarioLogin;
     }
 }
