@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ClassCliente.cs" />
     <Compile Include="Clases\ClassEmpleado.cs" />
     <Compile Include="Clases\ClassProducto.cs" />
     <Compile Include="Clientes.cs">
@@ -79,6 +80,7 @@
     <Compile Include="Empleadoos.Designer.cs">
       <DependentUpon>Empleadoos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositorios\ClienteRepositorio.cs" />
     <Compile Include="Repositorios\LoginRepositorio.cs" />
     <Compile Include="Repositorios\ProductoRepositorio.cs" />
     <Compile Include="Repositorios\EmpleadoRepositorio.cs" />

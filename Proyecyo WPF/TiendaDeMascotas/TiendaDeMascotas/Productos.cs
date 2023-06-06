@@ -181,13 +181,13 @@ namespace TiendaDeMascotas
             if (ProductoDGV.SelectedRows.Count > 0)
             {
                 // Obtener el número de producto de la fila seleccionada
-                int empNum = Convert.ToInt32(ProductoDGV.SelectedRows[0].Cells["ProductoID"].Value);
+                int prodNum = Convert.ToInt32(ProductoDGV.SelectedRows[0].Cells["ProductoID"].Value);
 
                 // Eliminar el producto del GunaDataGridView
                 ProductoDGV.Rows.RemoveAt(ProductoDGV.SelectedRows[0].Index);
 
                 // Eliminar el producto de la base de datos
-                if (ProductoRepository.Eliminar(empNum))
+                if (ProductoRepository.Eliminar(prodNum))
                 {
                     MessageBox.Show("Producto eliminado correctamente.");
                 }
