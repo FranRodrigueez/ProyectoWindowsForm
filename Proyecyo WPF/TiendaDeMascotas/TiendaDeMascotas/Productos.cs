@@ -17,6 +17,29 @@ namespace TiendaDeMascotas
         public Productos()
         {
             InitializeComponent();
+            MostrarProductos();
+
+
+            // Asignar el evento SelectionChanged al GunaDataGridView
+            ProductoDGV.SelectionChanged += ProductoDGV_SelectionChanged;
+        }
+
+        private void ProductoDGV_SelectionChanged(object sender, EventArgs e)
+        {
+            if (ProductoDGV.SelectedRows.Count > 0)
+            {
+                // Obtener los datos del empleado seleccionado
+                string nombre = ProductoDGV.SelectedRows[0].Cells["ProductoNombre"].Value.ToString();
+                string categoria = ProductoDGV.SelectedRows[0].Cells["ProductoCategoria"].Value.ToString();
+                string cantidad = ProductoDGV.SelectedRows[0].Cells["ProductoCantidad"].Value.ToString();
+                string precio = ProductoDGV.SelectedRows[0].Cells["ProductoPrecio"].Value.ToString();
+
+                // Mostrar los datos en los cuadros de texto
+                ProductoNombre.Text = nombre;
+                ProductoCategoria.Text = categoria;
+                ProductoCantidad.Text = cantidad;
+                ProductoPrecio.Text = precio;
+            }
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -89,6 +112,67 @@ namespace TiendaDeMascotas
 
                 MostrarProductos();
 
+            }
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            if (ProductoDGV.SelectedRows.Count > 0)
+            {
+                // Obtener el número de empleado de la fila seleccionada
+                int prodNum = Convert.ToInt32(ProductoDGV.SelectedRows[0].Cells["ProductoID"].Value);
+
+                // Obtener los datos modificados de las cajas de texto
+                string nuevoNombre = ProductoNombre.Text;
+                string nuevaCategoria = ProductoCategoria.Text;
+                string nuevoCantidad = ProductoCantidad.Text;
+                string nuevoPrecio = ProductoPrecio.Text;
+
+                // Actualizar los datos en el GunaDataGridView
+                ProductoDGV.SelectedRows[0].Cells["ProductoNombre"].Value = nuevoNombre;
+                ProductoDGV.SelectedRows[0].Cells["ProductoCategoria"].Value = nuevaCategoria;
+                ProductoDGV.SelectedRows[0].Cells["ProductoCantidad"].Value = nuevoCantidad;
+                ProductoDGV.SelectedRows[0].Cells["ProductoPrecio"].Value = nuevoPrecio;
+
+                // Actualizar los datos en la base de datos
+                if (ProductoRepository.Actualizar(prodNum, nuevoNombre, nuevaCategoria, nuevoCantidad, nuevoPrecio))
+                {
+                    MessageBox.Show("Datos actualizados correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar los datos en la base de datos.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para editar.");
+            }
+        }
+
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        {
+            if (ProductoDGV.SelectedRows.Count > 0)
+            {
+                // Obtener el número de producto de la fila seleccionada
+                int empNum = Convert.ToInt32(ProductoDGV.SelectedRows[0].Cells["ProductoID"].Value);
+
+                // Eliminar el producto del GunaDataGridView
+                ProductoDGV.Rows.RemoveAt(ProductoDGV.SelectedRows[0].Index);
+
+                // Eliminar el producto de la base de datos
+                if (ProductoRepository.Eliminar(empNum))
+                {
+                    MessageBox.Show("Producto eliminado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el producto de la base de datos.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una fila para borrar.");
             }
         }
     }

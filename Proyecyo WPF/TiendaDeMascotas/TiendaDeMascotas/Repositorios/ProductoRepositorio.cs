@@ -34,14 +34,14 @@ namespace TiendaDeMascotas
             return retorno;
         }
 
-        public static bool Eliminar(int prodNum)
+        public static bool Eliminar(int ProductoID)
         {
             bool exito = false;
             using (SqlConnection conn = ObtenerConexion())
             {
-                string deleteQuery = "DELETE FROM Productos WHERE ProdNum = @ProdNum";
+                string deleteQuery = "DELETE FROM Productos WHERE ProductoID = @ProdNum";
                 SqlCommand comando = new SqlCommand(deleteQuery, conn);
-                comando.Parameters.AddWithValue("@ProdNum", prodNum);
+                comando.Parameters.AddWithValue("@ProdNum", ProductoID);
 
                 int filasAfectadas = comando.ExecuteNonQuery();
                 exito = (filasAfectadas > 0);
@@ -50,12 +50,12 @@ namespace TiendaDeMascotas
             return exito;
         }
 
-        public static bool Actualizar(int prodNum, string nuevoNombre, string nuevaCategoria, int nuevaCantidad, decimal nuevoPrecio)
+        public static bool Actualizar(int prodNum, string nuevoNombre, string nuevaCategoria, string nuevaCantidad, string nuevoPrecio)
         {
             bool exito = false;
             using (SqlConnection conn = ObtenerConexion())
             {
-                string updateQuery = "UPDATE Productos SET ProductoNombre = @Nombre, ProductoCategoria = @Categoria, ProductoCantidad = @Cantidad, ProductoPrecio = @Precio WHERE ProdNum = @ProdNum";
+                string updateQuery = "UPDATE Productos SET ProductoNombre = @Nombre, ProductoCategoria = @Categoria, ProductoCantidad = @Cantidad, ProductoPrecio = @Precio WHERE ProductoID = @ProdNum";
                 SqlCommand comando = new SqlCommand(updateQuery, conn);
                 comando.Parameters.AddWithValue("@Nombre", nuevoNombre);
                 comando.Parameters.AddWithValue("@Categoria", nuevaCategoria);
