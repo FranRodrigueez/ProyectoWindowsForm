@@ -81,6 +81,7 @@
       <DependentUpon>Empleadoos.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
+    <Compile Include="Repositorios\HomeRepositorio.cs" />
     <Compile Include="Repositorios\LoginRepositorio.cs" />
     <Compile Include="Repositorios\ProductoRepositorio.cs" />
     <Compile Include="Repositorios\EmpleadoRepositorio.cs" />

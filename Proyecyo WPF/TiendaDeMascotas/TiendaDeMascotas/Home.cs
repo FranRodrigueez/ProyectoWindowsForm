@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TiendaDeMascotas.Repositorios;
 
 namespace TiendaDeMascotas
 {
@@ -30,6 +32,17 @@ namespace TiendaDeMascotas
             //Facturas.MouseLeave += Label_MouseLeave;
             Salir.MouseEnter += Label_MouseEnter;
             Salir.MouseLeave += Label_MouseLeave;
+
+            Dictionary<string, int> cantidadProductos = HomeRepositorio.ObtenerCantidadProductosPorCategoria();
+
+            if (cantidadProductos.ContainsKey("Perros"))
+                label15.Text = cantidadProductos["Perros"].ToString();
+            if (cantidadProductos.ContainsKey("Gatos"))
+                label5.Text = cantidadProductos["Gatos"].ToString();
+            if (cantidadProductos.ContainsKey("Peces"))
+                label6.Text = cantidadProductos["Peces"].ToString();
+            if (cantidadProductos.ContainsKey("Pájaros"))
+                label14.Text = cantidadProductos["Pájaros"].ToString();
         }
 
         private void Label_MouseEnter(object sender, EventArgs e)
@@ -122,6 +135,41 @@ namespace TiendaDeMascotas
         private void Salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
