@@ -15,8 +15,36 @@ namespace TiendaDeMascotas
         public Home()
         {
             InitializeComponent();
-
+            InitializeLabelEvents();
         }
+
+        private void InitializeLabelEvents()
+        {
+            Productos.MouseEnter += Label_MouseEnter;
+            Productos.MouseLeave += Label_MouseLeave;
+            Clientes.MouseEnter += Label_MouseEnter;
+            Clientes.MouseLeave += Label_MouseLeave;
+            Empleados.MouseEnter += Label_MouseEnter;
+            Empleados.MouseLeave += Label_MouseLeave;
+            //Facturas.MouseEnter += Label_MouseEnter;
+            //Facturas.MouseLeave += Label_MouseLeave;
+            Salir.MouseEnter += Label_MouseEnter;
+            Salir.MouseLeave += Label_MouseLeave;
+        }
+
+        private void Label_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Hand;
+        }
+
+        private void Label_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Default;
+        }
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {

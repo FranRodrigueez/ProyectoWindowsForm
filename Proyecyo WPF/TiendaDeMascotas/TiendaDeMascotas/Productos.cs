@@ -18,10 +18,36 @@ namespace TiendaDeMascotas
         {
             InitializeComponent();
             MostrarProductos();
-
+            InitializeLabelEvents();
 
             // Asignar el evento SelectionChanged al GunaDataGridView
             ProductoDGV.SelectionChanged += ProductoDGV_SelectionChanged;
+        }
+
+        private void InitializeLabelEvents()
+        {
+            Inicio.MouseEnter += Label_MouseEnter;
+            Inicio.MouseLeave += Label_MouseLeave;
+            Clientes.MouseEnter += Label_MouseEnter;
+            Clientes.MouseLeave += Label_MouseLeave;
+            Empleados.MouseEnter += Label_MouseEnter;
+            Empleados.MouseLeave += Label_MouseLeave;
+            //Facturas.MouseEnter += Label_MouseEnter;
+            //Facturas.MouseLeave += Label_MouseLeave;
+            Salir.MouseEnter += Label_MouseEnter;
+            Salir.MouseLeave += Label_MouseLeave;
+        }
+
+        private void Label_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Hand;
+        }
+
+        private void Label_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Default;
         }
 
         private void ProductoDGV_SelectionChanged(object sender, EventArgs e)
@@ -202,6 +228,11 @@ namespace TiendaDeMascotas
         private void label5_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

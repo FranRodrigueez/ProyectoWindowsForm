@@ -15,6 +15,33 @@ namespace TiendaDeMascotas
         public Clientes()
         {
             InitializeComponent();
+            InitializeLabelEvents();
+        }
+
+        private void InitializeLabelEvents()
+        {
+            Inicio.MouseEnter += Label_MouseEnter;
+            Inicio.MouseLeave += Label_MouseLeave;
+            Productos.MouseEnter += Label_MouseEnter;
+            Productos.MouseLeave += Label_MouseLeave;
+            Empleados.MouseEnter += Label_MouseEnter;
+            Empleados.MouseLeave += Label_MouseLeave;
+            //Facturas.MouseEnter += Label_MouseEnter;
+            //Facturas.MouseLeave += Label_MouseLeave;
+            Salir.MouseEnter += Label_MouseEnter;
+            Salir.MouseLeave += Label_MouseLeave;
+        }
+
+        private void Label_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Hand;
+        }
+
+        private void Label_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Default;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -49,6 +76,11 @@ namespace TiendaDeMascotas
         {
             Home inicioForm = new Home();
             inicioForm.Show();
+        }
+
+        private void ClienteNombre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

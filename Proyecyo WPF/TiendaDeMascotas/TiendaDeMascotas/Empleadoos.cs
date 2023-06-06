@@ -23,7 +23,36 @@ namespace TiendaDeMascotas
 
             // Asignar el evento SelectionChanged al GunaDataGridView
             EmpleadoDGV.SelectionChanged += EmpleadoDGV_SelectionChanged;
+
+            InitializeLabelEvents();
+
         }
+        private void InitializeLabelEvents()
+        {
+            Inicio.MouseEnter += Label_MouseEnter;
+            Inicio.MouseLeave += Label_MouseLeave;
+            Productos.MouseEnter += Label_MouseEnter;
+            Productos.MouseLeave += Label_MouseLeave;
+            Clientes.MouseEnter += Label_MouseEnter;
+            Clientes.MouseLeave += Label_MouseLeave;           
+            //Facturas.MouseEnter += Label_MouseEnter;
+            //Facturas.MouseLeave += Label_MouseLeave;
+            Salir.MouseEnter += Label_MouseEnter;
+            Salir.MouseLeave += Label_MouseLeave;
+        }
+
+        private void Label_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Hand;
+        }
+
+        private void Label_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            label.Cursor = Cursors.Default;
+        }
+
         private void EmpleadoDGV_SelectionChanged(object sender, EventArgs e)
         {
             if (EmpleadoDGV.SelectedRows.Count > 0)
