@@ -175,5 +175,33 @@ namespace TiendaDeMascotas
                 MessageBox.Show("Seleccione una fila para borrar.");
             }
         }
+
+        private void Inicio_Click(object sender, EventArgs e)
+        {
+            Home inicioForm = new Home();
+            inicioForm.Show();
+        }
+
+        private void Clientes_Click(object sender, EventArgs e)
+        {
+            Clientes clienteForm = new Clientes();
+            clienteForm.Show();
+        }
+
+        private void Empleados_Click(object sender, EventArgs e)
+        {
+            Empleadoos empleadoForm = new Empleadoos();
+            empleadoForm.Show();
+        }
+
+        private void Factura_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

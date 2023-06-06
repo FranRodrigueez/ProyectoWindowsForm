@@ -189,5 +189,34 @@ namespace TiendaDeMascotas
         {
 
         }
+
+        private void Productos_Click(object sender, EventArgs e)
+        {
+            Productos productosForm = new Productos();
+            productosForm.Show();
+        }
+
+        private void Inicio_Click(object sender, EventArgs e)
+        {
+            Home inicioForm = new Home();
+            inicioForm.Show();
+        }
+
+        private void Clientes_Click(object sender, EventArgs e)
+        {
+            Clientes clienteForm = new Clientes();
+            clienteForm.Show();
+        }
+
+        private void Empleados_Click(object sender, EventArgs e)
+        {
+            Empleadoos empleadoForm = new Empleadoos();
+            empleadoForm.Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

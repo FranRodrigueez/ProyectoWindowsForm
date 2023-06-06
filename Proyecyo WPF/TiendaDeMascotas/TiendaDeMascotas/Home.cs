@@ -15,6 +15,7 @@ namespace TiendaDeMascotas
         public Home()
         {
             InitializeComponent();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -65,6 +66,34 @@ namespace TiendaDeMascotas
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Productos_Click(object sender, EventArgs e)
+        {
+            Productos productosForm = new Productos();
+            productosForm.Show();
+        }
+
+        private void Clientes_Click(object sender, EventArgs e)
+        {
+            Clientes clientesForm = new Clientes();
+            clientesForm.Show();
+        }
+
+        private void Empleados_Click(object sender, EventArgs e)
+        {
+            Empleadoos empleadosForm = new Empleadoos();
+            empleadosForm.Show();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
