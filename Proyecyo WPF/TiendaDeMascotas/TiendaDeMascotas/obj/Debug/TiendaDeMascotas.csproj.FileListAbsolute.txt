@@ -83,3 +83,4 @@ C:\Users\Usuario\Documents\GitHub\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMasco
 C:\Users\Usuario\Documents\GitHub\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.csproj.CopyComplete
 C:\Users\Usuario\Documents\GitHub\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.exe
 C:\Users\Usuario\Documents\GitHub\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.pdb
+C:\Users\Usuario\Documents\GitHub\ProyectoWindowsForm\Proyecyo WPF\TiendaDeMascotas\TiendaDeMascotas\obj\Debug\TiendaDeMascotas.Facturas.resources

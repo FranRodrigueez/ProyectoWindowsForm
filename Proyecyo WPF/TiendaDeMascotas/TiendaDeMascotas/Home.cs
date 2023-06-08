@@ -28,8 +28,8 @@ namespace TiendaDeMascotas
             Clientes.MouseLeave += Label_MouseLeave;
             Empleados.MouseEnter += Label_MouseEnter;
             Empleados.MouseLeave += Label_MouseLeave;
-            //Facturas.MouseEnter += Label_MouseEnter;
-            //Facturas.MouseLeave += Label_MouseLeave;
+            Factura.MouseEnter += Label_MouseEnter;
+            Factura.MouseLeave += Label_MouseLeave;
             Salir.MouseEnter += Label_MouseEnter;
             Salir.MouseLeave += Label_MouseLeave;
 
@@ -177,6 +177,12 @@ namespace TiendaDeMascotas
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Factura_Click(object sender, EventArgs e)
+        {
+            Facturas facturaForm = new Facturas();
+            facturaForm.Show();
         }
     }
 }

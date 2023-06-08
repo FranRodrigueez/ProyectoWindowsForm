@@ -507,6 +507,7 @@
             this.Factura.Size = new System.Drawing.Size(99, 29);
             this.Factura.TabIndex = 5;
             this.Factura.Text = "Factura";
+            this.Factura.Click += new System.EventHandler(this.Factura_Click);
             // 
             // pictureBox4
             // 
