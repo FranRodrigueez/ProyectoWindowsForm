@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TiendaDeMascotas.Repositorios
 {
-    internal class FacturaRepositorio
+    public class FacturaRepositorio
     {
         public static SqlConnection ObtenerConexion()
         {
@@ -15,5 +15,6 @@ namespace TiendaDeMascotas.Repositorios
             conn.Open();
             return conn;
         }
+
     }
 }
