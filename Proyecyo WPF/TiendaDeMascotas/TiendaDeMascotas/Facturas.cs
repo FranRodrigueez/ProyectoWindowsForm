@@ -22,7 +22,7 @@ namespace TiendaDeMascotas
             InitializeLabelEvents();
             Load += Facturas_Load; // Suscribir el evento Load al método Facturas_Load
             ProductoDGV.SelectionChanged += ProductosDGV_SelectionChanged; // Suscribir el evento SelectionChanged
-           
+
 
         }
 
@@ -153,8 +153,10 @@ namespace TiendaDeMascotas
 
         private void ProductoCantidad_TextChanged(object sender, EventArgs e)
         {
-         
+
         }
+
+        private List<int> cantidadesRestadas = new List<int>();
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
@@ -198,6 +200,8 @@ namespace TiendaDeMascotas
                         return;
                     }
 
+                    cantidadesRestadas.Add(cantidad);
+
                     // Actualizar la cantidad en la base de datos
                     int nuevaCantidad = cantidadBaseDatos - cantidad;
                     reader.Close();
@@ -207,6 +211,16 @@ namespace TiendaDeMascotas
                     updateComando.Parameters.AddWithValue("@NuevaCantidad", nuevaCantidad);
                     updateComando.Parameters.AddWithValue("@Nombre", nombreProducto);
                     updateComando.ExecuteNonQuery();
+
+                    // Actualizar la cantidad en el DataGridView ProductoDGV
+                    if (ProductoDGV.SelectedRows.Count > 0)
+                    {
+                        DataGridViewRow selectedRow = ProductoDGV.SelectedRows[0];
+                        int rowIndex = selectedRow.Index;
+                        int cantidadActualizada = cantidadBaseDatos - cantidad;
+                        selectedRow.Cells["ProductoCantidad"].Value = cantidadActualizada;
+                        ProductoDGV.Rows[rowIndex].Selected = true;
+                    }
                 }
                 reader.Close();
             }
@@ -228,10 +242,62 @@ namespace TiendaDeMascotas
             ProductosFacturados.Rows.Add(nuevaFila);
         }
 
+
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay filas en el DataGridView
+            if (ProductosFacturados.Rows.Count > 0)
+            {
+                // Verificar si la lista de cantidades restadas no está vacía
+                if (cantidadesRestadas.Count > 0)
+                {
+                    // Recuperar las cantidades restadas y restaurarlas en la base de datos
+                    using (SqlConnection conn = FacturaRepositorio.ObtenerConexion())
+                    {
+                        for (int i = 0; i < ProductosFacturados.Rows.Count; i++)
+                        {
+                            // Verificar si la fila y la celda no son nulas
+                            if (ProductosFacturados.Rows[i] != null && ProductosFacturados.Rows[i].Cells[0].Value != null)
+                            {
+                                string nombreProducto = ProductosFacturados.Rows[i].Cells[0].Value.ToString();
+                                int cantidadFacturada = cantidadesRestadas[i];
+
+                                string selectQuery = "SELECT ProductoID, ProductoNombre, ProductoCantidad FROM Productos WHERE ProductoNombre = @Nombre";
+                                SqlCommand comando = new SqlCommand(selectQuery, conn);
+                                comando.Parameters.AddWithValue("@Nombre", nombreProducto);
+
+                                SqlDataReader reader = comando.ExecuteReader();
+                                if (reader.Read())
+                                {
+                                    int cantidadActual = reader.GetInt32(reader.GetOrdinal("ProductoCantidad"));
+                                    int nuevaCantidad = cantidadActual + cantidadFacturada;
+                                    reader.Close();
+
+                                    string updateQuery = "UPDATE Productos SET ProductoCantidad = @NuevaCantidad WHERE ProductoNombre = @Nombre";
+                                    SqlCommand updateComando = new SqlCommand(updateQuery, conn);
+                                    updateComando.Parameters.AddWithValue("@NuevaCantidad", nuevaCantidad);
+                                    updateComando.Parameters.AddWithValue("@Nombre", nombreProducto);
+                                    updateComando.ExecuteNonQuery();
+                                }
+                                reader.Close();
+                            }
+                        }
+                    }
+
+                    // Limpiar la lista de cantidades restadas
+                    cantidadesRestadas.Clear();
+
+                    // Vaciar el DataGridView "ProductosFacturados"
+                    ProductosFacturados.Rows.Clear();
+                }
+            }
+        }
+
     }
 }
 
