@@ -22,8 +22,7 @@ namespace TiendaDeMascotas
             InitializeLabelEvents();
             Load += Facturas_Load; // Suscribir el evento Load al método Facturas_Load
             ProductoDGV.SelectionChanged += ProductosDGV_SelectionChanged; // Suscribir el evento SelectionChanged
-
-
+            ClienteID.SelectedIndexChanged += ClienteID_SelectedIndexChanged; // Suscribir el evento SelectedIndexChanged
         }
 
         private void InitializeLabelEvents()
@@ -55,6 +54,31 @@ namespace TiendaDeMascotas
         private void Facturas_Load(object sender, EventArgs e)
         {
             CargarProductos(); // Cargar los productos en el DataGridView al cargar el formulario
+            CargarClientes(); // Cargar los clientes en el ComboBox al cargar el formulario
+        }
+
+        private void CargarClientes()
+        {
+            try
+            {
+                using (SqlConnection conn = FacturaRepositorio.ObtenerConexion())
+                {
+                    string selectQuery = "SELECT ClienteID FROM Clientes";
+                    SqlCommand comando = new SqlCommand(selectQuery, conn);
+
+                    SqlDataReader reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int clienteID = reader.GetInt32(reader.GetOrdinal("ClienteID"));
+                        ClienteID.Items.Add(clienteID.ToString()); // Convertir el valor entero a cadena
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los clientes: " + ex.Message);
+            }
         }
 
         private void CargarProductos()
@@ -105,7 +129,30 @@ namespace TiendaDeMascotas
 
         private void ClienteID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Acciones del evento
+            string clienteID = ClienteID.SelectedItem?.ToString();
+         
+
+            try
+            {
+                using (SqlConnection conn = FacturaRepositorio.ObtenerConexion())
+                {
+                    string selectQuery = "SELECT ClienteNombre FROM Clientes WHERE ClienteID = @ClienteID";
+                    SqlCommand comando = new SqlCommand(selectQuery, conn);
+                    comando.Parameters.AddWithValue("@ClienteID", clienteID);
+
+                    SqlDataReader reader = comando.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        string clienteNombre = reader.GetString(reader.GetOrdinal("ClienteNombre"));
+                        NombreCliente.Text = clienteNombre;
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener el nombre del cliente: " + ex.Message);
+            }
         }
 
         private void ProductoDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -156,7 +203,15 @@ namespace TiendaDeMascotas
 
         }
 
+       
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private List<int> cantidadesRestadas = new List<int>();
+        private decimal totalFactura = 0; // Variable para almacenar el total de la factura
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
@@ -231,6 +286,12 @@ namespace TiendaDeMascotas
                 return;
             }
 
+            // Calcular el subtotal
+            decimal subtotal = cantidad * decimal.Parse(precioProducto);
+
+            // Agregar el subtotal al total de la factura
+            totalFactura += subtotal;
+
             // Crear una nueva fila con los valores obtenidos
             DataGridViewRow nuevaFila = new DataGridViewRow();
             nuevaFila.CreateCells(ProductosFacturados);
@@ -242,62 +303,76 @@ namespace TiendaDeMascotas
             ProductosFacturados.Rows.Add(nuevaFila);
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            // Verificar si hay filas en el DataGridView
-            if (ProductosFacturados.Rows.Count > 0)
-            {
-                // Verificar si la lista de cantidades restadas no está vacía
-                if (cantidadesRestadas.Count > 0)
-                {
-                    // Recuperar las cantidades restadas y restaurarlas en la base de datos
-                    using (SqlConnection conn = FacturaRepositorio.ObtenerConexion())
-                    {
-                        for (int i = 0; i < ProductosFacturados.Rows.Count; i++)
-                        {
-                            // Verificar si la fila y la celda no son nulas
-                            if (ProductosFacturados.Rows[i] != null && ProductosFacturados.Rows[i].Cells[0].Value != null)
-                            {
-                                string nombreProducto = ProductosFacturados.Rows[i].Cells[0].Value.ToString();
-                                int cantidadFacturada = cantidadesRestadas[i];
-
-                                string selectQuery = "SELECT ProductoID, ProductoNombre, ProductoCantidad FROM Productos WHERE ProductoNombre = @Nombre";
-                                SqlCommand comando = new SqlCommand(selectQuery, conn);
-                                comando.Parameters.AddWithValue("@Nombre", nombreProducto);
-
-                                SqlDataReader reader = comando.ExecuteReader();
-                                if (reader.Read())
-                                {
-                                    int cantidadActual = reader.GetInt32(reader.GetOrdinal("ProductoCantidad"));
-                                    int nuevaCantidad = cantidadActual + cantidadFacturada;
-                                    reader.Close();
-
-                                    string updateQuery = "UPDATE Productos SET ProductoCantidad = @NuevaCantidad WHERE ProductoNombre = @Nombre";
-                                    SqlCommand updateComando = new SqlCommand(updateQuery, conn);
-                                    updateComando.Parameters.AddWithValue("@NuevaCantidad", nuevaCantidad);
-                                    updateComando.Parameters.AddWithValue("@Nombre", nombreProducto);
-                                    updateComando.ExecuteNonQuery();
-                                }
-                                reader.Close();
-                            }
-                        }
-                    }
-
-                    // Limpiar la lista de cantidades restadas
-                    cantidadesRestadas.Clear();
-
-                    // Vaciar el DataGridView "ProductosFacturados"
-                    ProductosFacturados.Rows.Clear();
-                }
-            }
+            
         }
 
+        private void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton21_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bunifuThinButton21_Click_2(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(ClienteID.Text) || string.IsNullOrEmpty(NombreCliente.Text) || string.IsNullOrEmpty(ProductoName.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+
+            // Obtener los valores de los campos
+            string clienteID = ClienteID.Text;
+            string clienteNombre = NombreCliente.Text;
+            string productoNombre = ProductoName.Text;
+            decimal total = totalFactura;
+
+            // Guardar los datos en la tabla Facturaas de la base de datos
+            using (SqlConnection connection = FacturaRepositorio.ObtenerConexion())
+            {
+                string query = "INSERT INTO Facturaas (ClienteID, ClienteNombre, ProductoNombre, Total) VALUES (@ClienteID, @ClienteNombre, @ProductoNombre, @Total)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ClienteID", clienteID);
+                command.Parameters.AddWithValue("@ClienteNombre", clienteNombre);
+                command.Parameters.AddWithValue("@ProductoNombre", productoNombre);
+                command.Parameters.AddWithValue("@Total", total);
+                command.ExecuteNonQuery();
+            }
+
+            // Obtener el último IDFactura insertado
+            int idFactura = 0;
+            using (SqlConnection connection = FacturaRepositorio.ObtenerConexion())
+            {
+                string query = "SELECT MAX(IDFactura) FROM Facturaas";
+                SqlCommand command = new SqlCommand(query, connection);
+                object result = command.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                {
+                    idFactura = Convert.ToInt32(result);
+                }
+            }
+
+            // Agregar la nueva fila al DataGridView "Total"
+            DataGridViewRow nuevaFila = new DataGridViewRow();
+            nuevaFila.CreateCells(Total);
+            nuevaFila.Cells[0].Value = idFactura;
+            nuevaFila.Cells[1].Value = clienteID;
+            nuevaFila.Cells[2].Value = clienteNombre;
+            nuevaFila.Cells[3].Value = productoNombre;
+            nuevaFila.Cells[4].Value = total;
+
+            Total.Rows.Add(nuevaFila);
+        }
+
+        private void Total_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

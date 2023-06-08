@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Clases\ClassCliente.cs" />
     <Compile Include="Clases\ClassEmpleado.cs" />
+    <Compile Include="Clases\ClassFactura.cs" />
     <Compile Include="Clases\ClassProducto.cs" />
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
