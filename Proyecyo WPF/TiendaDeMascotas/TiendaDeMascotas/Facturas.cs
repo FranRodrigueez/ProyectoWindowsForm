@@ -20,6 +20,8 @@ namespace TiendaDeMascotas
             InitializeComponent();
             InitializeLabelEvents();
             Load += Facturas_Load; // Suscribir el evento Load al método Facturas_Load
+            ProductoDGV.SelectionChanged += ProductosDGV_SelectionChanged; // Suscribir el evento SelectionChanged
+            
         }
 
         private void InitializeLabelEvents()
@@ -75,7 +77,18 @@ namespace TiendaDeMascotas
             }
         }
 
-        // Resto del código del formulario
+        private void ProductosDGV_SelectionChanged(object sender, EventArgs e)
+        {
+            if (ProductoDGV.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = ProductoDGV.SelectedRows[0];
+                string nombreProducto = selectedRow.Cells["ProductoNombre"].Value.ToString();
+                string precioProducto = selectedRow.Cells["ProductoPrecio"].Value.ToString();
+
+                ProductoNombre.Text = nombreProducto;
+                ProductoPrecio.Text = precioProducto;
+            }
+        }
 
         private void label9_Click(object sender, EventArgs e)
         {
@@ -130,5 +143,18 @@ namespace TiendaDeMascotas
         {
             Application.Exit();
         }
+
+        private void ProductoNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductoCantidad_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+
     }
 }
+

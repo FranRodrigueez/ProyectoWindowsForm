@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ContraseñaLogin = new System.Windows.Forms.TextBox();
             this.IniciarSesion = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.UsuarioLogin = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -142,18 +141,6 @@
             this.IniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.IniciarSesion.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label4.Location = new System.Drawing.Point(133, 378);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 19);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Admin";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Crimson;
@@ -177,7 +164,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 468);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.IniciarSesion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ContraseñaLogin);
@@ -204,7 +190,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuThinButton2 IniciarSesion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox ContraseñaLogin;
