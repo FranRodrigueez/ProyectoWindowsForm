@@ -63,6 +63,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.EmpleadoRol = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -279,6 +281,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.EmpleadoRol);
             this.panel2.Controls.Add(this.BorrarEmpleado);
             this.panel2.Controls.Add(this.EditarEmpleado);
             this.panel2.Controls.Add(this.GuardarEmpleado);
@@ -499,6 +503,30 @@
             this.pictureBox5.TabIndex = 48;
             this.pictureBox5.TabStop = false;
             // 
+            // EmpleadoRol
+            // 
+            this.EmpleadoRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.EmpleadoRol.FormattingEnabled = true;
+            this.EmpleadoRol.Items.AddRange(new object[] {
+            "Administrador",
+            "Empleado"});
+            this.EmpleadoRol.Location = new System.Drawing.Point(425, 171);
+            this.EmpleadoRol.Name = "EmpleadoRol";
+            this.EmpleadoRol.Size = new System.Drawing.Size(194, 28);
+            this.EmpleadoRol.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.Location = new System.Drawing.Point(421, 146);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 22);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Rol";
+            // 
             // Empleadoos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,5 +598,7 @@
         private System.Windows.Forms.Label label12;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox EmpleadoRol;
     }
 }

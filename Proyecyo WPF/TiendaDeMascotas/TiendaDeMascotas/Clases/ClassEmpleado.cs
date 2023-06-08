@@ -13,6 +13,7 @@ namespace TiendaDeMascotas
         public string direccion;
         public string telefono;
         public string contraseña;
+        public string rol;
 
         public ClassEmpleado()
         {
@@ -20,6 +21,7 @@ namespace TiendaDeMascotas
             direccion = null;
             telefono = null;
             contraseña = null;
+            rol = null;
         }
     }
 }

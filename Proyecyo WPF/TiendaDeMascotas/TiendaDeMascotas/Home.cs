@@ -45,6 +45,8 @@ namespace TiendaDeMascotas
                 label14.Text = cantidadProductos["Pájaros"].ToString();
         }
 
+
+
         private void Label_MouseEnter(object sender, EventArgs e)
         {
             Label label = (Label)sender;
@@ -129,9 +131,9 @@ namespace TiendaDeMascotas
 
         private void Home_Load(object sender, EventArgs e)
         {
-            
+      
         }
-
+      
         private void Salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -168,6 +170,11 @@ namespace TiendaDeMascotas
         }
 
         private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }

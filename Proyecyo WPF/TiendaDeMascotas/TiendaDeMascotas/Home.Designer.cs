@@ -40,18 +40,18 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Clientes = new System.Windows.Forms.Label();
             this.Salir = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureEmpleados = new System.Windows.Forms.PictureBox();
             this.Empleados = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -93,7 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,17 +213,17 @@
             this.panel8.Size = new System.Drawing.Size(259, 129);
             this.panel8.TabIndex = 20;
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(142, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 25);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "0";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(133, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 25);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "0";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
@@ -279,17 +279,17 @@
             this.panel6.Size = new System.Drawing.Size(253, 143);
             this.panel6.TabIndex = 18;
             // 
-            // label14
+            // label6
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(151, 74);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 25);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "0";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(142, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 25);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "0";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label2
             // 
@@ -336,17 +336,17 @@
             this.panel5.Size = new System.Drawing.Size(262, 129);
             this.panel5.TabIndex = 17;
             // 
-            // label5
+            // label14
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(133, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 25);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "0";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(151, 74);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(24, 25);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "0";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label1
             // 
@@ -397,6 +397,7 @@
             this.label9.Size = new System.Drawing.Size(241, 29);
             this.label9.TabIndex = 13;
             this.label9.Text = "Mascotas a la venta";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel2
             // 
@@ -541,15 +542,15 @@
             this.Salir.Text = "Log out";
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
-            // pictureBox6
+            // pictureEmpleados
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(12, 365);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(64, 58);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 10;
-            this.pictureBox6.TabStop = false;
+            this.pictureEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("pictureEmpleados.Image")));
+            this.pictureEmpleados.Location = new System.Drawing.Point(12, 365);
+            this.pictureEmpleados.Name = "pictureEmpleados";
+            this.pictureEmpleados.Size = new System.Drawing.Size(64, 58);
+            this.pictureEmpleados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureEmpleados.TabIndex = 10;
+            this.pictureEmpleados.TabStop = false;
             // 
             // Empleados
             // 
@@ -586,7 +587,7 @@
             this.ClientSize = new System.Drawing.Size(1181, 717);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.Empleados);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureEmpleados);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.Clientes);
             this.Controls.Add(this.pictureBox4);
@@ -627,7 +628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -646,7 +647,7 @@
         private System.Windows.Forms.Label Clientes;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label Empleados;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureEmpleados;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

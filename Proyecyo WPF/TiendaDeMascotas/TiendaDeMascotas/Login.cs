@@ -48,7 +48,7 @@ namespace TiendaDeMascotas
             {
                 using (SqlConnection conn = LoginRepositorio.ObtenerConexion())
                 {
-                    string selectQuery = "SELECT EmpNombre, EmpContraseña FROM Empleados WHERE EmpNombre = @Usuario AND EmpContraseña = @Contraseña";
+                    string selectQuery = "SELECT EmpNombre, EmpContraseña FROM Trabajadores WHERE EmpNombre = @Usuario AND EmpContraseña = @Contraseña";
                     SqlCommand comando = new SqlCommand(selectQuery, conn);
                     comando.Parameters.AddWithValue("@Usuario", usuario);
                     comando.Parameters.AddWithValue("@Contraseña", contraseña);
