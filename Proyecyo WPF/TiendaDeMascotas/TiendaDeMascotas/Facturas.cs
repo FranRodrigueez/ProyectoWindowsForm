@@ -54,7 +54,7 @@ namespace TiendaDeMascotas
         private void Facturas_Load(object sender, EventArgs e)
         {
             CargarProductos(); // Cargar los productos en el DataGridView al cargar el formulario
-            CargarClientes(); // Cargar los clientes en el ComboBox al cargar el formulario
+            CargarClientes(); // Cargar los clientes en el ComboBox al cargar el formulario           
         }
 
         private void CargarClientes()
@@ -102,6 +102,7 @@ namespace TiendaDeMascotas
                 MessageBox.Show("Error al cargar los productos: " + ex.Message);
             }
         }
+
 
         private void ProductosDGV_SelectionChanged(object sender, EventArgs e)
         {
@@ -305,73 +306,65 @@ namespace TiendaDeMascotas
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            // Vaciar el DataGridView ProductosFacturados
+            // Vaciar el DataGridView "ProductosFacturados"
             ProductosFacturados.Rows.Clear();
 
-            // Sumar la cantidad restada de los productos a la base de datos
-            for (int i = 0; i < ProductosFacturados.Rows.Count; i++)
+            // Sumar la cantidad restada a los productos en la base de datos
+            using (SqlConnection conn = FacturaRepositorio.ObtenerConexion())
             {
-                string nombreProducto = ProductosFacturados.Rows[i].Cells[0].Value.ToString();
-                string cantidadProducto = ProductosFacturados.Rows[i].Cells[2].Value.ToString();
-
-                if (string.IsNullOrEmpty(cantidadProducto))
+                for (int i = 0; i < cantidadesRestadas.Count && i < ProductosFacturados.Rows.Count; i++)
                 {
-                    MessageBox.Show("Cantidad incorrecta: la cantidad no puede estar vacía.");
-                    return;
-                }
+                    int cantidadRestada = cantidadesRestadas[i];
+                    string nombreProducto = "";
 
-                int cantidad;
-                if (!int.TryParse(cantidadProducto, out cantidad))
-                {
-                    MessageBox.Show("Cantidad incorrecta: la cantidad debe ser un número entero.");
-                    return;
-                }
-
-                using (SqlConnection conn = FacturaRepositorio.ObtenerConexion())
-                {
-                    string selectQuery = "SELECT ProductoID, ProductoCantidad FROM Productos WHERE ProductoNombre = @Nombre";
-                    SqlCommand comando = new SqlCommand(selectQuery, conn);
-                    comando.Parameters.AddWithValue("@Nombre", nombreProducto);
-
-                    SqlDataReader reader = comando.ExecuteReader();
-                    if (reader.Read())
+                    // Verificar si la celda no es nula antes de obtener su valor
+                    if (ProductosFacturados.Rows[i].Cells[0].Value != null)
                     {
-                        int productoID = reader.GetInt32(reader.GetOrdinal("ProductoID"));
-                        int cantidadBaseDatos = reader.GetInt32(reader.GetOrdinal("ProductoCantidad"));
+                        nombreProducto = ProductosFacturados.Rows[i].Cells[0].Value.ToString();
+                    }
 
-                        int nuevaCantidad = cantidadBaseDatos + cantidad;
+                    if (!string.IsNullOrEmpty(nombreProducto))
+                    {
+                        // Obtener la cantidad actual del producto en la base de datos
+                        string selectQuery = "SELECT ProductoCantidad FROM Productos WHERE ProductoNombre = @Nombre";
+                        SqlCommand selectCommand = new SqlCommand(selectQuery, conn);
+                        selectCommand.Parameters.AddWithValue("@Nombre", nombreProducto);
+                        int cantidadBaseDatos = (int)selectCommand.ExecuteScalar();
 
-                        reader.Close();
+                        // Sumar la cantidad restada a la cantidad actual en la base de datos
+                        int nuevaCantidad = cantidadBaseDatos + cantidadRestada;
 
-                        string updateQuery = "UPDATE Productos SET ProductoCantidad = @NuevaCantidad WHERE ProductoID = @ProductoID";
-                        SqlCommand updateComando = new SqlCommand(updateQuery, conn);
-                        updateComando.Parameters.AddWithValue("@NuevaCantidad", nuevaCantidad);
-                        updateComando.Parameters.AddWithValue("@ProductoID", productoID);
-                        updateComando.ExecuteNonQuery();
+                        // Actualizar la cantidad en la base de datos
+                        string updateQuery = "UPDATE Productos SET ProductoCantidad = @NuevaCantidad WHERE ProductoNombre = @Nombre";
+                        SqlCommand updateCommand = new SqlCommand(updateQuery, conn);
+                        updateCommand.Parameters.AddWithValue("@NuevaCantidad", nuevaCantidad);
+                        updateCommand.Parameters.AddWithValue("@Nombre", nombreProducto);
+                        updateCommand.ExecuteNonQuery();
 
-                        // Actualizar la cantidad en el DataGridView ProductoDGV
+                        // Actualizar la cantidad en el DataGridView "ProductoDGV"
                         foreach (DataGridViewRow row in ProductoDGV.Rows)
                         {
-                            int productoIDGrid = Convert.ToInt32(row.Cells["ProductoID"].Value);
-                            if (productoIDGrid == productoID)
+                            if (row.Cells["ProductoNombre"].Value != null && row.Cells["ProductoNombre"].Value.ToString() == nombreProducto)
                             {
                                 row.Cells["ProductoCantidad"].Value = nuevaCantidad;
                                 break;
                             }
                         }
                     }
-                    reader.Close();
                 }
             }
 
-            // Limpiar la lista de cantidades restadas y el total de la factura
+            // Limpiar la lista de cantidades restadas
             cantidadesRestadas.Clear();
-            totalFactura = 0;
         }
 
         private void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Vaciar el DataGridView "ProductosFacturados"
+            ProductosFacturados.Rows.Clear();
 
+            // Restablecer el total de la factura a cero
+            totalFactura = 0;
         }
 
         private void bunifuThinButton21_Click_1(object sender, EventArgs e)
