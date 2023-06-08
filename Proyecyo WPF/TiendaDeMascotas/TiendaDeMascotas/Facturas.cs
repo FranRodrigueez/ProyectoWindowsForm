@@ -305,7 +305,68 @@ namespace TiendaDeMascotas
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            
+            // Vaciar el DataGridView ProductosFacturados
+            ProductosFacturados.Rows.Clear();
+
+            // Sumar la cantidad restada de los productos a la base de datos
+            for (int i = 0; i < ProductosFacturados.Rows.Count; i++)
+            {
+                string nombreProducto = ProductosFacturados.Rows[i].Cells[0].Value.ToString();
+                string cantidadProducto = ProductosFacturados.Rows[i].Cells[2].Value.ToString();
+
+                if (string.IsNullOrEmpty(cantidadProducto))
+                {
+                    MessageBox.Show("Cantidad incorrecta: la cantidad no puede estar vacía.");
+                    return;
+                }
+
+                int cantidad;
+                if (!int.TryParse(cantidadProducto, out cantidad))
+                {
+                    MessageBox.Show("Cantidad incorrecta: la cantidad debe ser un número entero.");
+                    return;
+                }
+
+                using (SqlConnection conn = FacturaRepositorio.ObtenerConexion())
+                {
+                    string selectQuery = "SELECT ProductoID, ProductoCantidad FROM Productos WHERE ProductoNombre = @Nombre";
+                    SqlCommand comando = new SqlCommand(selectQuery, conn);
+                    comando.Parameters.AddWithValue("@Nombre", nombreProducto);
+
+                    SqlDataReader reader = comando.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        int productoID = reader.GetInt32(reader.GetOrdinal("ProductoID"));
+                        int cantidadBaseDatos = reader.GetInt32(reader.GetOrdinal("ProductoCantidad"));
+
+                        int nuevaCantidad = cantidadBaseDatos + cantidad;
+
+                        reader.Close();
+
+                        string updateQuery = "UPDATE Productos SET ProductoCantidad = @NuevaCantidad WHERE ProductoID = @ProductoID";
+                        SqlCommand updateComando = new SqlCommand(updateQuery, conn);
+                        updateComando.Parameters.AddWithValue("@NuevaCantidad", nuevaCantidad);
+                        updateComando.Parameters.AddWithValue("@ProductoID", productoID);
+                        updateComando.ExecuteNonQuery();
+
+                        // Actualizar la cantidad en el DataGridView ProductoDGV
+                        foreach (DataGridViewRow row in ProductoDGV.Rows)
+                        {
+                            int productoIDGrid = Convert.ToInt32(row.Cells["ProductoID"].Value);
+                            if (productoIDGrid == productoID)
+                            {
+                                row.Cells["ProductoCantidad"].Value = nuevaCantidad;
+                                break;
+                            }
+                        }
+                    }
+                    reader.Close();
+                }
+            }
+
+            // Limpiar la lista de cantidades restadas y el total de la factura
+            cantidadesRestadas.Clear();
+            totalFactura = 0;
         }
 
         private void gunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -367,6 +428,12 @@ namespace TiendaDeMascotas
             nuevaFila.Cells[4].Value = total;
 
             Total.Rows.Add(nuevaFila);
+
+            // Vaciar el DataGridView ProductosFacturados
+            ProductosFacturados.Rows.Clear();
+
+            // Restablecer el total de la factura a cero
+            totalFactura = 0;
         }
 
         private void Total_CellContentClick(object sender, DataGridViewCellEventArgs e)

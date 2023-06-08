@@ -743,6 +743,7 @@
             // 
             this.Column4.HeaderText = "ProductoNombre";
             this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
             // 
             // Column5
             // 
